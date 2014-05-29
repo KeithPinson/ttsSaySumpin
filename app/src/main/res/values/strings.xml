@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Say Sumpin\'</string>
+    <string name="action_settings">Settings</string>
+    <string name="default_text">Type something&#8230;</string>
+    <string name="button_text">Say it</string>
+
+</resources>

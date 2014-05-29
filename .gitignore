@@ -1,0 +1,16 @@
+# IntelliJ
+.idea
+*.iml
+*.iws
+*.ipr
+classes
+
+# Gradle
+.gradle/
+build
+
+# Mac
+.DS_Store
+
+tmp
+/local.properties
