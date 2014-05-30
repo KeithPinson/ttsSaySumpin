@@ -164,6 +164,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     textToSpeech.speak(sayString, TextToSpeech.QUEUE_FLUSH, ttsParams);
 
                     return null;
+
                 }
             }.execute((Void)null);
         }
