@@ -36,6 +36,38 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         // EditText Field
         //
         textToSay = (EditText)findViewById(com.keithpinson.ttssaysumpin.app.R.id.textToSay);
+        textToSay.setOnClickListener( new EditText.OnClickListener() {
+            public void onClick( View v ) {
+                if( ! promptCleared ) {
+                    promptCleared = true;
+                    textToSay.setText("");
+                }
+            }
+        });
+        textToSay.setOnKeyListener( new EditText.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event ) {
+                if( ! promptCleared ) {
+                    promptCleared = true;
+
+                    char ch = (char)event.getUnicodeChar();
+
+                    // Filter non-speakable text
+                    if( ch >= 32 && ch < 127 ) {
+                        // Some speakable unicode characters will be blocked with this simple filter
+                        textToSay.setText( ch + "" );
+                        textToSay.setSelection(1);
+                    }
+                    else {
+                        textToSay.setText("");
+                    }
+
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        });
 
 
         //
